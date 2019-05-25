@@ -1,7 +1,6 @@
 #!/bin/sh
 
 cd ..
-echo $PWD > /dev/stderr
 
 cat cgi-bin/head.html
 
