@@ -1,0 +1,21 @@
+# Viddir
+
+A crude video web-gallery.
+
+Currently unsafe - WIP. Mostly for home use, not to be exposed to the Internet.
+
+Shows thumbnails and has simple tagging.
+
+Made with CGI, shell and a bit of C. For thumbnails generation ffmpeg is used.
+
+Index page as of yet:
+
+http://hostname/cgi-bin/index.sh
+
+- store/ - all files reside here
+- tags/ - root of tags, inside a directory per tag, inside every directory files linked to the store directory
+- thumbs/ - all generated thumbnails
+
+Default sorting by mtime.
+
+Index page shows everything from store.
