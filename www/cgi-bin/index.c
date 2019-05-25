@@ -83,9 +83,12 @@ main(int argc, char *argv[])
 		stat(thumb, &sb);
 		*/
 
-		printf("<li><img src=\"thumb.sh/%s\" alt=\"%s\">\n"
-			"\t%s\n",
-			array.buf[i].name, array.buf[i].name, array.buf[i].name);
+		printf("<li><a href=\"/cgi-bin/video.sh/%s\">\n"
+			"<img src=\"/cgi-bin/thumb.sh/%s\" alt=\"%s\">\n"
+			"\t%s</a>\n",
+			array.buf[i].name,
+			array.buf[i].name, array.buf[i].name,
+			array.buf[i].name);
 		//printf("%ld %s\n", array.buf[i].mtime, array.buf[i].name);
 	}
 	return 0;
