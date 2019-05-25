@@ -23,6 +23,19 @@ echo "<h1>Index</h1>"
 
 echo "<ul>"
 
-cgi-bin/index "$DIR" 1 10
+if [[ -z "$QUERY_STRING" ]]; then
+	page=1
+else
+	page=${QUERY_STRING##*=}
+fi
+cgi-bin/index "$DIR" "$page" 30
 
 echo "</ul>"
+
+prev=$(($page - 1))
+next=$(($page + 1))
+if [[ "$prev" -gt 0 ]]; then
+echo "<a href=\"$SCRIPT_NAME$PATH_INFO?p=$prev\">Prev ($prev)</a>"
+fi
+echo $page
+echo "<a href=\"$SCRIPT_NAME$PATH_INFO?p=$next\">Next ($next)</a>"
