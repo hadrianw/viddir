@@ -13,7 +13,8 @@ Index page as of yet:
 http://hostname/cgi-bin/index.sh
 
 - store/ - all files reside here
-- tags/ - root of tags, inside a directory per tag, inside every directory files linked to the store directory
+- tags/ - root of tags, inside a directory per tag, inside every directory
+  are symbolic links to the files stored in the store directory
 - thumbs/ - all generated thumbnails
 
 Default sorting by mtime.

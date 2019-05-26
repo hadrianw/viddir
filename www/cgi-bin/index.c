@@ -43,7 +43,7 @@ static struct array array = {.size = 16};
 static int
 step(const char *path, const struct stat *sb, int flag, struct FTW *ftwbuf)
 {
-	if(flag == FTW_F) {
+	if(flag == FTW_F || flag == FTW_SL) {
 		push(&array, &path[ftwbuf->base], sb->st_mtime);
 	}
 	return 0;
@@ -70,7 +70,7 @@ main(int argc, char *argv[])
 		sizeof(array.buf[0])
 	);
 	
-	nftw(argv[1], step, 2, 0);
+	nftw(argv[1], step, 2, FTW_PHYS);
 	qsort(array.buf, array.len, sizeof(array.buf[0]), compar);
 
 	for(int i = (page-1) * perpage; i < array.len && i < page * perpage; i++) {

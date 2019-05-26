@@ -18,8 +18,8 @@ fi
 
 cat cgi-bin/head.html
 
-echo "<title>Index</title>"
-echo "<h1>Index</h1>"
+echo "<title>$PATH_INFO - Index</title>"
+echo "<h1>Index of $PATH_INFO</h1>"
 
 echo "<ul>"
 

@@ -30,7 +30,7 @@ BEGIN {
 {
 	if($0 ~ /^\t/) {
 		system("mkdir -p \"tags/" $1 "/\"")
-		system("ln \"store/" NAME "\" \"tags/" $1 "/" NAME "\"")
+		system("ln -s \"store/" NAME "\" \"tags/" $1 "/" NAME "\"")
 	} else {
 		system("rm \"tags/" $1 "/" NAME "\"")
 	}
