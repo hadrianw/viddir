@@ -39,3 +39,12 @@ echo "<a href=\"$SCRIPT_NAME$PATH_INFO?p=$prev\">Prev ($prev)</a>"
 fi
 echo $page
 echo "<a href=\"$SCRIPT_NAME$PATH_INFO?p=$next\">Next ($next)</a>"
+
+echo "<p>"
+echo "<a href=\"$SCRIPT_NAME\">Index</a>"
+
+echo "<p>Tags:"
+cd tags
+for tag in *; do
+	echo "<a href=\"$SCRIPT_NAME/$tag\">$tag</a>"
+done
