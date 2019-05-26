@@ -20,5 +20,16 @@ cd tags
 echo "<p>"
 for i in */"$NAME"; do
 	tag=$(dirname "$i")
+	tags="$tags $tag"
 	echo "<a href=\"/cgi-bin/index.sh/$tag\">$tag</a>"
 done
+
+echo "<form action=\"/cgi-bin/edit-tags.sh/$NAME\" method=\"post\" enctype=\"text/plain\">"
+echo "<label for=\"tags\">Tags</label><br>"
+echo "<textarea id=\"tags\" name=\"tags\">"
+for i in */"$NAME"; do
+	echo $tags
+done
+echo "</textarea><br>"
+echo "<button type=\"submit\">Edit tags</button>"
+echo "</form>"
