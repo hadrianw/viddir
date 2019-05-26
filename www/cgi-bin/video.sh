@@ -33,3 +33,6 @@ done
 echo "</textarea><br>"
 echo "<button type=\"submit\">Edit tags</button>"
 echo "</form>"
+
+echo "<p>"
+echo "<a href=\"/cgi-bin/index.sh\">Index</a>"
